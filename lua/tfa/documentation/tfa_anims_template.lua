@@ -208,3 +208,41 @@ SWEP.Animations = {
 	-- 	["value"] = ACT_VM_MISSCENTER2
 	-- },
 -- }
+
+
+-- Fake ACT enum entries added by the base
+-- These values do not exist in the engine, so for those names use the replacement value in the $sequence definition:
+
+-- ACT_VM_FIDGET_EMPTY - ACT_CROSSBOW_FIDGET_UNLOADED
+-- ACT_VM_FIDGET_SILENCED - ACT_RPG_FIDGET_UNLOADED
+-- ACT_VM_HOLSTER_SILENCED - ACT_CROSSBOW_HOLSTER_UNLOADED
+-- ACT_VM_RELOAD_ADS - ACT_IDLE_AIM_RIFLE_STIMULATED
+-- ACT_VM_RELOAD_EMPTY_ADS - ACT_WALK_AIM_RIFLE_STIMULATED
+-- ACT_VM_RELOAD_SILENCED_ADS - ACT_RUN_AIM_RIFLE_STIMULATED
+-- ACT_SHOTGUN_RELOAD_START_ADS - ACT_IDLE_SHOTGUN_RELAXED
+-- ACT_SHOTGUN_RELOAD_FINISH_ADS - ACT_IDLE_SHOTGUN_STIMULATED
+
+
+--[[ Bow Base ]]--
+-- SWEP.BowAnimations = {
+	-- ["shake"] = {
+	-- 	["type"] = TFA.Enum.ANIMATION_SEQ,
+	-- 	["value"] = "tiredloop",
+	-- 	["enabled"] = true
+	-- },
+	-- ["shoot"] = {
+	-- 	["type"] = TFA.Enum.ANIMATION_SEQ,
+	-- 	["value"] = "fire_1",
+	-- 	["enabled"] = true
+	-- },
+	-- ["cancel"] = {
+	-- 	["type"] = TFA.Enum.ANIMATION_SEQ,
+	-- 	["value"] = "cancelarrow",
+	-- 	["enabled"] = true
+	-- },
+	-- ["draw"] = {
+	-- 	["type"] = TFA.Enum.ANIMATION_SEQ,
+	-- 	["value"] = "drawarrow",
+	-- 	["enabled"] = true
+	-- }
+-- }

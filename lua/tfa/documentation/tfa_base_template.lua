@@ -76,6 +76,7 @@ SWEP.Secondary.IronSightsInSound = nil -- Sound to play when iron sighting in? n
 SWEP.Secondary.IronSightsOutSound = nil -- Sound to play when iron sighting out? nil for default
 
 ----------------- TFA Base Advanced sound handling
+-- Requires looped .wav files prepared beforehand - https://wiki.facepunch.com/gmod/Creating_Looping_Sounds
 SWEP.Primary.LoopSound          = nil -- Looped fire sound, unsilenced
 SWEP.Primary.LoopSoundSilenced  = nil -- Looped fire sound, silenced
 SWEP.Primary.LoopSoundTail      = nil -- Loop end/tail sound, unsilenced
@@ -470,16 +471,62 @@ SWEP.IronSightsReloadLock       = true
 -- AKA VElements (SWEP Construction Kit naming)
 SWEP.ViewModelElements = nil --[[ {
 	["element_name"] = {
-		-- Standard SCK table syntax here
-		-- (type, model, bone, rel, pos, angle, size, color, surpresslightning, material, skin, bodygroup, active)
+		-- Basic SCK table syntax
+		-- Copy only one type element table!
+
+		-- Model element:
+		["type"] = "Model",
+		["model"] = "models/error.mdl", -- Model path
+		["bone"] = "", -- Bone name of the viewmodel/parent element to attach to (ignored when bonemerge is used)
+		["rel"] = "", -- Name of the parent element, empty means viewmodel
+		["pos"] = Vector(0, 0, 0), -- Position offset (ignored when bonemerge is used)
+		["angle"] = Angle(0, 0, 0), -- Angle offset (ignored when bonemerge is used)
+		["size"] = Vector(1, 1, 1), -- Element size (ignored when bonemerge is used)
+		["color"] = Color(255, 255, 255, 255), -- Color and opacity of the element
+		["surpresslightning"] = false, -- Suppress engine lighting for the element
+		["material"] = "", -- Singular material override (keps for backwards compatibilty, use the "materials" table below instead)
+		["skin"] = 0, -- Material skin index to use
+		["bodygroup"] = {}, -- Bodygroup overrides by index
+		["active"] = true, -- Element is active by default?
+
+		-- Sprite element:
+		["type"] = "Sprite",
+		["sprite"] = "sprites/glow1", -- Sprite texture path (for material use the "vmt" key instead)
+		["bone"] = "", -- Bone name of the viewmodel/parent element to attach to
+		["rel"] = "", -- Name of the parent element, empty means viewmodel
+		["pos"] = Vector(0, 0, 0), -- Position offset
+		["size"] = Vector(1, 1, 1), -- Sprite size
+		["color"] = Color(255, 255, 255, 255), -- Color and opacity of the element
+		-- VMT generation parameters:
+		["nocull"] = false,
+		["additive"] = false,
+		["vertexalpha"] = false,
+		["vertexcolor"] = false,
+		["ignorez"] = false,
+		["active"] = true, -- Element is active by default?
+
+		-- Quad element:
+		["type"] = "Quad",
+		["bone"] = "", -- Bone name of the viewmodel/parent element to attach to
+		["rel"] = "", -- Name of the parent element, empty means viewmodel
+		["pos"] = Vector(0, 0, 0), -- Position offset
+		["angle"] = Angle(0, 0, 0), -- Angle offset
+		["size"] = Vector(1, 1, 1), -- Element size
+		["draw_func"] = function(element) -- Draw function is called when element is active
+			-- your code here
+		end,
+		["active"] = true, -- Element is active by default?
 
 		-- Additional syntax from TFA Base:
-		["attachment"] = "muzzle", -- Parent attachment name, overrides the "bone" value
-		["bonemerge"] = false, -- Bonemerge model instead of positioning it at reference point
-		["materials"] = {}, -- Submaterials replacement table
-		["translucent"] = false, -- Workaround for translucent models drawing behind player hands
+		["attachment"] = "muzzle", -- Parent attachment name, overrides the "bone" value (all types)
+		["bonemerge"] = false, -- Bonemerge model instead of positioning it at reference point (model only)
+		["materials"] = {}, -- Submaterials replacement table (model only)
+		["translucent"] = false, -- Workaround for translucent models drawing behind player hands (all types)
+		["draw_func_outer"] = function(element, pos, ang, size) -- Secondary draw function added to address stuff like player hands clipping (quad only)
+			-- your code here
+		end,
 
-		-- For stencil sights:
+		-- For models with stencil sights:
 		["mask"] = "models/error.mdl", -- Sight mask model path
 		["reticle"] = "models/error.mdl", -- Model path for model reticle type
 	}
@@ -510,11 +557,11 @@ SWEP.HoldType = "" -- This is how others view you carrying the weapon. Options i
 -- normal melee melee2 fist knife smg ar2 pistol rpg physgun grenade shotgun crossbow slam passive
 -- You're mostly going to use ar2, smg, shotgun or pistol. rpg and crossbow make for good sniper rifles
 
--- Holdtypes overrides
--- Holdtype override when iron sighting
-SWEP.IronSightHoldTypeOverride  = nil -- Defaults to nothing (disabled)
--- This variable overrides the sprint holdtype
-SWEP.SprintHoldTypeOverride     = nil -- Defaults to nothing (disabled)
+-- Holdtypes overrides (not cached, nil or "" to disable; only active when dynamic holdtypes are enabled except sprint override)
+SWEP.IronSightHoldTypeOverride  = nil -- ADS
+SWEP.SprintHoldTypeOverride     = nil -- Sprinting, holster and safety/passive hold
+SWEP.ReloadHoldTypeOverride     = nil -- Reloading
+SWEP.CrouchHoldTypeOverride     = nil -- Crouching
 
 -- Procedural world model offset
 -- Value below is good enough for Counter-Strike: Source worldmodels
