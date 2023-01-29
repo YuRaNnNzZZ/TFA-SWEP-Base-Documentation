@@ -1,4 +1,10 @@
 # This is an archive of changelog messages from `tfa_loader.lua`.
+## 4.7.5.1
+* Fixed keys from keybinds tab not being capitalized properly in the hint
+* Melee damage now follows the global damage multiplier and randomization rules
+* Fixed damage randomization not being synced with client
+* Player melee damage modifier is now applied correctly
+
 ## 4.7.5.0
 * Added keybind hints - shown on weapon draw, after changing attachments and with scoreboard (with hooks for mods to add custom hints)
 * Fixed NPCs and players flying away on headshots with bullet penetration enabled
