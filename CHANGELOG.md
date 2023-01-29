@@ -1,4 +1,14 @@
 # This is an archive of changelog messages from `tfa_loader.lua`.
+## 4.7.5.0
+* Added keybind hints - shown on weapon draw, after changing attachments and with scoreboard (with hooks for mods to add custom hints)
+* Fixed NPCs and players flying away on headshots with bullet penetration enabled
+* Сamera bobbing fixes (framerate consistency, broken fade in/out, not working on inspect)
+* Added melee damage blocking hook
+* Looped fire sound now gets paused with the game
+* 3D scopes zoom and sensitivity are now calculated properly for weapons relied on removed autodetection system
+* Fixed console spam with custom shell casing models without correct setup
+* Debug crosshair is now corrected for the camera movement
+
 ## 4.7.4.2
 * Addressed even more 3D scopes issues
 

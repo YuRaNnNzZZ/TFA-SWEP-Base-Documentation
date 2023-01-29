@@ -632,6 +632,18 @@ GM:TFA_PostBash(Weapon weapon)
 -- Arguments:
 --     1. Weapon weapon
 
+boolean GM:TFA_MeleeCanBlockDamage(Weapon weapon, Player player, CTakeDamageInfo dmginfo, boolean canblock)
+-- Hook name: TFA_MeleeCanBlockDamage
+-- Description: Callen when melee weapon is asked to block the incoming damage
+-- State: Shared (only for bullet damage), Server (for any other type)
+-- Arguments:
+--     1. Weapon weapon
+--     2. Player player - The player that is receiving the damage that's about to be blocked
+--     3. CTakeDamageInfo dmginfo - Incoming damage
+--     4. boolean canblock - Original decision of weapon if it's allowed to block or not
+-- Returns:
+--     1. boolean - Return to override the decision
+
 
 
 ----------------------------
@@ -675,6 +687,63 @@ boolean GM:TFA_DrawScopeOverlay(Weapon weapon)
 -- Returns:
 --     1. boolean - Return true to prevent drawing the overlay
 
+table GM:TFA_PopulateKeyBindHints(Weapon weapon, table rawKeysTable)
+-- Hook name: TFA_PopulateKeyBindHints
+-- Description: Allows to populate keybinds table prior to drawing (called from SWEP:PopulateKeyBindHints() function)
+-- State: Client
+-- Arguments:
+--     1. Weapon weapon
+--     2. table rawKeysTable - Raw keybindings table
+-- Returns:
+--     1. table rawKeysTableResult - Return the table to stop further processing
+-- Example:
+hook.Add("TFA_PopulateKeyBindHints", "TFA_Hooks_Example", function(wep, keys)
+	-- self:GetKeyBind({"+use", "+reload"}, "firemode")
+	-- First argument is a table of commands
+	-- Second argument is an ID of keybind registered through TFA.RegisterKeyBind, replaces all keys from first argument if key is bound (optional)
+
+	table.insert(keys, {
+		label = "Open Spawnmenu", -- it is recommended to use a localized string with language.GetPhrase
+		keys = {wep:GetKeyBind({"+menu"})} -- can have multiple keys; GetKeyBind args: first is table of commands (they will be chained with +), the second (optional) is keybind identifier added with TFA.RegisterKeyBind and will be displayed instead of first
+	}) -- this will add "[Q] - Open Spawnmenu" at the end of the keys table (before the TAB one, it always comes the last)
+
+	table.insert(keys, 1, {
+		label = "Sprint Forward",
+		keys = {wep:GetKeyBind({"+speed", "+forward"})}
+	}) -- this will add "[SHIFT + W] - Sprint Forward" at the start of the keys table
+
+	-- table.insert(keys, {
+	-- 	label = language.GetPhrase("tfa.hint.keys.safety"),
+	-- 	keys = {self:GetKeyBind({"+speed"}), self:GetKeyBind({"+use", "+reload"}, "firemode")}
+	-- }) -- example from the base, will display SHIFT+E+R or SHIFT+<firemode bind override key>
+end)
+
+boolean GM:TFA_PreDrawKeyBindHint(Weapon weapon, number x, number y, number alpha, table rawKeysTable, table keyStrings)
+-- Hook name: TFA_PreDrawKeyBindHint
+-- Description: Called before keybinds hint is drawn (only if alpha > 0)
+-- State: Client
+-- Arguments:
+--     1. Weapon weapon
+--     2. number x
+--     3. number y
+--     4. number alpha
+--     5. table rawKeysTable
+--     6. table keyStrings - Processed keybinds in format "[KEY(S)] - Label"
+-- Returns:
+--     1. boolean - Return true to prevent drawing
+
+GM:TFA_PostDrawKeyBindHint(Weapon weapon, number x, number y, number alpha, table rawKeysTable, table keyStrings)
+-- Hook name: TFA_PostDrawKeyBindHint
+-- Description: Called after keybinds hint is drawn
+-- State: Client
+-- Arguments:
+--     1. Weapon weapon
+--     2. number x
+--     3. number y
+--     4. number alpha
+--     5. table rawKeysTable
+--     6. table keyStrings
+
 
 
 ---------------------------------------
@@ -711,13 +780,14 @@ boolean GM:TFA_InspectVGUI_InfoStart(Weapon weapon, Panel contentpanel)
 -- Returns:
 --     1. boolean - Return false to prevent creation
 
-GM:TFA_InspectVGUI_InfoFinish(Weapon weapon, Panel contentpanel)
+GM:TFA_InspectVGUI_InfoFinish(Weapon weapon, Panel contentpanel, Panel infopanel)
 -- Hook name: TFA_InspectVGUI_InfoFinish
 -- Description: Called when weapon info elements are added
 -- State: Client
 -- Arguments:
 --     1. Weapon weapon
 --     2. Panel contentpanel - The padded panel that contains all elements
+--     3. Panel infopanel - The container panel for all displayed info elements
 
 boolean GM:TFA_InspectVGUI_StatsStart(Weapon weapon, Panel contentpanel)
 -- Hook name: TFA_InspectVGUI_StatsStart
@@ -729,13 +799,14 @@ boolean GM:TFA_InspectVGUI_StatsStart(Weapon weapon, Panel contentpanel)
 -- Returns:
 --     1. boolean - Return false to prevent creation
 
-GM:TFA_InspectVGUI_StatsFinish(Weapon weapon, Panel contentpanel)
+GM:TFA_InspectVGUI_StatsFinish(Weapon weapon, Panel contentpanel, Panel statspanel)
 -- Hook name: TFA_InspectVGUI_StatsFinish
 -- Description: Called when weapon stats are added
 -- State: Client
 -- Arguments:
 --     1. Weapon weapon
 --     2. Panel contentpanel - The padded panel that contains all elements
+--     3. Panel statspanel - The container panel for all displayed stats
 
 boolean GM:TFA_InspectVGUI_AttachmentsStart(Weapon weapon, Panel contentpanel)
 -- Hook name: TFA_InspectVGUI_AttachmentsStart
