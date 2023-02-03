@@ -1,4 +1,9 @@
 # This is an archive of changelog messages from `tfa_loader.lua`.
+## 4.7.5.2
+* Expanded stencil sights with pre and post draw functions (with attachments support and hook to stop reticles from drawing)
+* Fixed missing thirdperson animations/sounds in singleplayer
+* Fixed unscoping on rechamber when weapon doesn't require it
+
 ## 4.7.5.1
 * Fixed keys from keybinds tab not being capitalized properly in the hint
 * Melee damage now follows the global damage multiplier and randomization rules

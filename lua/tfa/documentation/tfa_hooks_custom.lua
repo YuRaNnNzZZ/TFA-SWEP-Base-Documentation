@@ -744,6 +744,15 @@ GM:TFA_PostDrawKeyBindHint(Weapon weapon, number x, number y, number alpha, tabl
 --     5. table rawKeysTable
 --     6. table keyStrings
 
+boolean GM:TFA_ShouldDrawStencilSight(Weapon weapon)
+-- Hook name: TFA_ShouldDrawStencilSight
+-- Description: Called when weapon is trying to draw stencil sight reticle
+-- State: Client
+-- Arguments:
+--     1. Weapon weapon
+-- Returns:
+--     1. boolean - Return false to prevent reticle from drawing
+
 
 
 ---------------------------------------

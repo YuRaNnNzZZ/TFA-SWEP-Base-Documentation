@@ -69,6 +69,27 @@ function ATTACHMENT:CustomBulletCallback(wep, attacker, trace, dmginfo)
 end
 ]]--
 
+--[[
+-- Called before stencil sight reticle is drawn
+function ATTACHMENT:PreDrawStencilSight(wep, vm, ply, sightVElementTable)
+	-- 3D rendering context from PostDrawViewModel
+	-- https://wiki.facepunch.com/gmod/3D_Rendering_Functions
+
+	-- return true -- to prevent SWEP:PreDrawStencilSight from being called
+	-- return false -- to stop reticle from drawing
+end
+]]--
+
+--[[
+-- Called right after stencil sight reticle is drawn
+function ATTACHMENT:PostDrawStencilSight(wep, vm, ply, sightVElementTable)
+	-- 3D rendering context from PostDrawViewModel
+	-- https://wiki.facepunch.com/gmod/3D_Rendering_Functions
+
+	-- return true -- to prevent SWEP:PostDrawStencilSight from being called
+end
+]]--
+
 if not TFA_ATTACHMENT_ISUPDATING then
 	TFAUpdateAttachments()
 end
