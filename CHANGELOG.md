@@ -1,4 +1,8 @@
 # This is an archive of changelog messages from `tfa_loader.lua`.
+## 4.7.5.3
+* Stencil sight reticle fixes (viewmodel redraw now skips the sight model, flat reticle now draws properly over everything)
+* Fixed some animations cutting off early (mostly noticeable with foregrip-like attachments which change animations)
+
 ## 4.7.5.2
 * Expanded stencil sights with pre and post draw functions (with attachments support and hook to stop reticles from drawing)
 * Fixed missing thirdperson animations/sounds in singleplayer
