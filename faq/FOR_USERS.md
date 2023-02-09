@@ -7,7 +7,7 @@ If there are errors produced each time: Make sure the error is produced by the b
 ## How do I lock X attachment on my server?
 You can only disable attachments completely (`Q` -> `Utilities` -> `Server` -> `Enable Attachments` or `sv_tfa_attachments_enabled 0`.) There will never be an option for selective attachments blacklist included in the base.
 
-If you are an addon developer, the base is providing a hook that enables to disallow equipping attachments. The documentation on base hooks is available [here](lua/tfa/documentation/tfa_hooks_custom.lua).
+If you are an addon developer, the base is providing a hook that enables to disallow equipping attachments. The documentation on base hooks is available [here](../lua/tfa/documentation/tfa_hooks_custom.lua).
 
 ## The C-menu (inspection screen) is not working!
 Copy the following line and run it in the console:
