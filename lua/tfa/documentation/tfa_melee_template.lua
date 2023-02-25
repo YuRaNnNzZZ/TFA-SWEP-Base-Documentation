@@ -78,6 +78,7 @@ SWEP.Primary.Directional        = false -- Prefer attacks with player's movement
 SWEP.Secondary.Attacks          = {} -- same as SWEP.Primary.Attacks
 SWEP.Secondary.MaxCombo         = -1
 SWEP.Secondary.Directional      = false
+SWEP.Secondary.PrimaryFallback  = true -- Allow falling back to primary attacks if secondary attack is not selected
 
 -- Attacks - Alternative (melee bash)
 SWEP.Secondary.CanBash            = true -- set to false to disable bashing

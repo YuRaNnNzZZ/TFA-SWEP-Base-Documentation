@@ -1,4 +1,12 @@
 # This is an archive of changelog messages from `tfa_loader.lua`.
+## 4.7.6.0
+* Keybind tooltips are now less annoying (do not force display when picking up props)
+* Fixed safety holster not working for bow-based weapons
+* Added ability to change amount of rounds appended for shotgun/round-insert reload type
+* Added override for melee weapon attack selection (old behavior/random attack is default)
+* Redone stats display: slight optimization and ability to add custom stats
+* Fixed tooltip panels not getting removed with inspection screen (slight memory leak)
+
 ## 4.7.5.3
 * Stencil sight reticle fixes (viewmodel redraw now skips the sight model, flat reticle now draws properly over everything)
 * Fixed some animations cutting off early (mostly noticeable with foregrip-like attachments which change animations)

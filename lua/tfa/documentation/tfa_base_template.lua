@@ -628,6 +628,7 @@ end
 
 -- AKA Shotgun
 SWEP.LoopedReload = false -- Enable looped / shotgun style / one round at time reloading.
+SWEP.LoopedReloadInsertAmount = 1 -- How much rounds to insert on each reload cycle
 
 SWEP.ShotgunEmptyAnim = false -- Enable emtpy reloads on shotguns?
 SWEP.ShotgunEmptyAnim_Shell = true -- Enable insertion of a shell directly into the chamber on empty reload?
