@@ -72,13 +72,15 @@ SWEP.Primary.Attacks            = { -- main attacks table, the values are select
 }
 SWEP.Primary.MaxCombo           = -1 -- How many attacks are allowed on single attack key hold
 SWEP.Primary.Directional        = false -- Prefer attacks with player's movement direction first
+SWEP.Primary.SplitDamage        = true -- Use the "dmg" value of the attack table? If false, SWEP.Primary.Damage will be used instead.
 
 -- Attacks - Secondary
 -- If secondary attacks table is empty or not defined, it falls back to primary table
 SWEP.Secondary.Attacks          = {} -- same as SWEP.Primary.Attacks
 SWEP.Secondary.MaxCombo         = -1
 SWEP.Secondary.Directional      = false
-SWEP.Secondary.PrimaryFallback  = true -- Allow falling back to primary attacks if secondary attack is not selected
+SWEP.Secondary.SplitDamage      = true -- Use the "dmg" value of the attack table? If false, SWEP.Secondary.Damage will be used instead.
+SWEP.Secondary.PrimaryFallback  = true -- Allow falling back to primary attacks if secondary attacks table is empty/unavailable
 
 -- Attacks - Alternative (melee bash)
 SWEP.Secondary.CanBash            = true -- set to false to disable bashing

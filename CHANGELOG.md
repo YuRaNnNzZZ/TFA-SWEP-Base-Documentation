@@ -1,4 +1,9 @@
 # This is an archive of changelog messages from `tfa_loader.lua`.
+## 4.7.6.1
+* Restored old secondary melee fallback behavior (only fallback to primary if there are no secondary attacks available)
+* Melee weapons can now use SWEP.Primary/Secondary.Damage instead of split per-attack value
+* Added random damage multiplier controls to server settings menu
+
 ## 4.7.6.0
 * Keybind tooltips are now less annoying (do not force display when picking up props)
 * Fixed safety holster not working for bow-based weapons
