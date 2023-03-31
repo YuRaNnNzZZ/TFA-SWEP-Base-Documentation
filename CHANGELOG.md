@@ -1,4 +1,9 @@
 # This is an archive of changelog messages from `tfa_loader.lua`.
+## 4.7.6.3
+* Fixed sprint offset being applied with melee bashing
+* Procedural camera bobbing is now inverted for inspect animations
+* Empty RTCode function (very old template weapons) is now patched out, removing unnecessary screen blur
+
 ## 4.7.6.2
 * Fixed procedural blowback spamming errors on client
 
