@@ -60,7 +60,7 @@ boolean GM:TFABase_ShouldLoadAttachment(string attachmentID, string path)
 -- State: Shared
 -- Arguments:
 --     1. string attachmentID - Requested attachment ID
---     2. string path - Attachment file path (without extension)
+--     2. string path - Attachment file path
 -- Returns:
 --     1. boolean - Return false to prevent attachment from loading and registration
 -- Example:
@@ -76,7 +76,7 @@ GM:TFABase_PreBuildAttachment(string attachmentID, string path, table attTbl)
 -- State: Shared
 -- Arguments:
 --     1. string attachmentID - Requested attachment ID
---     2. string path - Attachment file path (without extension)
+--     2. string path - Attachment file path
 --     3. table attTbl - Empty attachment reference table (only containing assigned ID)
 
 GM:TFABase_BuildAttachment(string attachmentID, string path, table attTbl)
@@ -85,7 +85,7 @@ GM:TFABase_BuildAttachment(string attachmentID, string path, table attTbl)
 -- State: Shared
 -- Arguments:
 --     1. string attachmentID - Requested attachment ID
---     2. string path - Attachment file path (without extension)
+--     2. string path - Attachment file path
 --     3. table attTbl - Populated attachment reference table
 
 GM:TFABase_RegisterAttachment(string attachmentID, table attTbl)

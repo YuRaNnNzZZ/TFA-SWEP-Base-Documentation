@@ -1,4 +1,8 @@
 # This is an archive of changelog messages from `tfa_loader.lua`.
+## 4.7.6.4
+* Fixed attachments reload command not working from server console
+* Fixed attachments ID resolving for related hooks
+
 ## 4.7.6.3
 * Fixed sprint offset being applied with melee bashing
 * Procedural camera bobbing is now inverted for inspect animations
