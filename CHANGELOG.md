@@ -1,4 +1,7 @@
 # This is an archive of changelog messages from `tfa_loader.lua`.
+## 4.7.6.5
+* Fixed doors not respawning after getting broken off hinges with melee weapons
+
 ## 4.7.6.4
 * Fixed attachments reload command not working from server console
 * Fixed attachments ID resolving for related hooks
