@@ -1,4 +1,9 @@
 # This is an archive of changelog messages from `tfa_loader.lua`.
+## 4.7.6.6
+* Fixed unsight on bolt/pump after shooting not working properly
+* Fixed hard error when attachment depends on another attachment which is unavailable/not registered
+* Added console warning for the case above
+
 ## 4.7.6.5
 * Fixed doors not respawning after getting broken off hinges with melee weapons
 
