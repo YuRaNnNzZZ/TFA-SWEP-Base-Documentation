@@ -239,10 +239,6 @@ SWEP.Primary.RangeFalloffLUT = {
 ]]
 
 ----------------- Spread stats
--- Bullet pattern to utilize
--- to be used to utilize built-in patterns
-SWEP.Primary.SpreadPattern      = nil -- Defaults to ""
-
 -- Spread bias
 -- The bigger is the number, the stronger is spread
 -- along specified axis (Yaw for X, Pitch for Y). Note that this is not clamped and it is possible
@@ -254,7 +250,10 @@ SWEP.Primary.SpreadBiasPitch    = nil -- Defaults to 1
 -- functions if you REALLY need them
 
 -- Less is more. Accuracy * 0.5 = Twice as accurate, Accuracy * 0.1 = Ten times as accurate
-SWEP.CrouchAccuracyMultiplier   = 0.5
+SWEP.CrouchAccuracyMultiplier                    = nil -- 0.5
+SWEP.JumpAccuracyMultiplier                      = nil -- 2
+SWEP.WalkAccuracyMultiplier                      = nil -- 1.35
+SWEP.ChangeStateAccuracyMultiplier               = nil -- 1.5
 
 ----------------- Recoil related things
 SWEP.ViewModelPunchPitchMultiplier               = nil -- Default value is 0.5
@@ -269,7 +268,12 @@ SWEP.ViewModelPunchYawMultiplier                 = nil -- Default value is 0.6
 SWEP.ViewModelPunchYawMultiplier_IronSights      = nil -- Default value is 0.25
 
 -- AKA IronRecoilMultiplier
-SWEP.Primary.IronRecoilMultiplier               = 0.5 -- Multiply recoil by this factor when we're in ironsights. This is proportional, not inversely.
+SWEP.Primary.IronRecoilMultiplier               = nil -- 0.5 -- Multiply recoil by this factor when we're in ironsights. This is proportional, not inversely.
+
+SWEP.CrouchRecoilMultiplier                     = nil -- 0.65 -- Multiply recoil by this factor when we're crouching. This is proportional, not inversely.
+SWEP.JumpRecoilMultiplier                       = nil -- 1.3 -- Multiply recoil by this factor when we're jumping. This is proportional, not inversely.
+SWEP.WallRecoilMultiplier                       = nil -- 1.1 -- Multiply recoil by this factor when we're walking. This is proportional, not inversely. (yes the name is "Wall" it's not a typo in template)
+SWEP.ChangeStateRecoilMultiplier                = nil -- 1.3 -- Multiply recoil by this factor when we're changing state e.g. not completely ironsighted. This is proportional, not inversely.
 
 -- Stats below have no effect if RecoilLUT is not defined
 SWEP.Primary.RecoilLUT_IronSightsMult           = nil -- Defaults to 0.5
