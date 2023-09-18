@@ -1,4 +1,8 @@
 # This is an archive of changelog messages from `tfa_loader.lua`.
+## 4.7.6.7
+* Fixed flat stat bars options breaking text display
+* Split up interface settings into groups
+
 ## 4.7.6.6
 * Fixed unsight on bolt/pump after shooting not working properly
 * Fixed hard error when attachment depends on another attachment which is unavailable/not registered
