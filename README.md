@@ -18,6 +18,6 @@
 - `lua/tfa/att/` - Attachments (files with `base` in their name are loaded first)
 ### All paths (except attachments) support client and server-side separation by prepending `cl_` or `sv_` to the file name.
 
-# For any questions regarding this documentation or any problems with developing addons for TFA Base, post in `#development-help` channel of the [official support Discord server](https://discord.gg/fSdpnZV3fX).
+# For any questions regarding this documentation or any problems with developing addons for TFA Base, post in `#development-help` channel of the [official support Discord server](https://discord.gg/6B2JbyekGF).
 
 ### If you want to translate the base to your language, take a look at the [localization reference](LOCALIZATION.md)!
