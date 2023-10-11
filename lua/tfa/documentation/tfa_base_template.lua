@@ -802,6 +802,7 @@ SWEP.ShootAnimation = {
 	}, -- Looping End
 }
 ]]
+SWEP.ShootAnimationLoopAutoOnly = nil -- true
 
 -- TFA.Enum.LOCOMOTION_ANI = Model's animation
 -- TFA.Enum.LOCOMOTION_LUA = Lua only

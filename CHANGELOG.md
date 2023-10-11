@@ -1,4 +1,8 @@
 # This is an archive of changelog messages from `tfa_loader.lua`.
+## 4.7.6.8
+* Added better checks for fire loop animation and sound
+* Fixed sprinting animation not playing after exiting fire loop
+
 ## 4.7.6.7
 * Fixed flat stat bars options breaking text display
 * Split up interface settings into groups
