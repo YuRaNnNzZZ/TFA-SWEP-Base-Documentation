@@ -1,4 +1,8 @@
 # This is an archive of changelog messages from `tfa_loader.lua`.
+## 4.7.7.0
+* Added missing viewmodel checks
+* Added toggle for TTT weapons list auto-population
+
 ## 4.7.6.8
 * Added better checks for fire loop animation and sound
 * Fixed sprinting animation not playing after exiting fire loop
