@@ -753,6 +753,11 @@ boolean GM:TFA_ShouldDrawStencilSight(Weapon weapon)
 -- Returns:
 --     1. boolean - Return false to prevent reticle from drawing
 
+GM:TFA_FontsLoaded()
+-- Hook name: TFA_FontsLoaded
+-- Description: Called after base (re)registers all it's fonts
+-- State: Client
+
 
 
 ---------------------------------------
