@@ -16,6 +16,7 @@ SWEP.TFADataVersion             = 1
 SWEP.Base                       = "tfa_gun_base"
 SWEP.Category                   = "TFA Template" -- The category.
 -- Please, just choose something generic or something I've already done if you plan on only doing like one (or two or three) swep(s).
+SWEP.SubCategory                = "" -- Spawnmenu subcategory.
 SWEP.Manufacturer               = nil -- Gun Manufactrer (e.g. Hoeckler and Koch)
 SWEP.Author                     = "" -- Author Tooltip
 SWEP.Contact                    = "" -- Contact Info Tooltip

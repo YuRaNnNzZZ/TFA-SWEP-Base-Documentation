@@ -1,4 +1,7 @@
 # This is an archive of changelog messages from `tfa_loader.lua`.
+## 4.7.8.1
+* Added spawnmenu subcategories support (SWEP.SubCategory)
+
 ## 4.7.8.0
 * Added simple fallback HUD that displays when main 3D2D HUD is disabled (for stuff like firemode)
 * Changed default font used across the base
