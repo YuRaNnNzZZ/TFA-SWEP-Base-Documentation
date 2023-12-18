@@ -1,4 +1,8 @@
 # This is an archive of changelog messages from `tfa_loader.lua`.
+## 4.7.8.2
+* Stencil reticle types can now be combined
+* Added a slight delay for subcategories population hook to make sure it runs after default weapons population
+
 ## 4.7.8.1
 * Added spawnmenu subcategories support (SWEP.SubCategory)
 

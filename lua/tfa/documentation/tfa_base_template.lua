@@ -532,8 +532,8 @@ SWEP.ViewModelElements = nil --[[ {
 		end,
 
 		-- For models with stencil sights:
-		["mask"] = "models/error.mdl", -- Sight mask model path
-		["reticle"] = "models/error.mdl", -- Model path for model reticle type
+		["mask"] = "models/error.mdl", -- Sight mask model path; if not defined the element itself becomes the stencil mask
+		["reticle"] = "models/error.mdl", -- Model path for model reticle type; must be bonemergeable on this element to work
 	}
 }]]--
 
@@ -935,7 +935,11 @@ SWEP.DInv2_Mass = nil -- DInventory/2 Specific. Determines weapon's mass in kilo
 SWEP.StencilSight = nil -- Enables stencil sight drawing
 SWEP.StencilSight_MinPercent = nil -- Mimimum aim progress percentage to draw; 0.05 by default; set to 0 to always draw
 SWEP.StencilSight_VElement = nil -- "scope_p90_fn_ring_sight_std" -- Name of VElement to draw sight on; must be active to work
-SWEP.StencilSight_UseMask = nil -- Use the .mask value of VElement's table as stencil mask model (model must be bonemergeable on the sights VElement!)
+SWEP.StencilSight_UseMask = nil -- Use the .mask value of VElement's table as stencil mask model, otherwise VElement is the stencil mask (model must be bonemergeable on the sights VElement!)
+
+-- StencilSight_ReticleType can accept bitwise OR of multiple sight types, such as:
+-- SWEP.StencilSight_ReticleType = bit.bor(TFA.Enum.RETICLE_FLAT, TFA.Enum.RETICLE_MODEL)
+-- Draw order is: TFA.Enum.RETICLE_MODEL, TFA.Enum.RETICLE_QUAD, TFA.Enum.RETICLE_FLAT
 
 -- Sight Type: Flat
 -- SWEP.StencilSight_ReticleType = TFA.Enum.RETICLE_FLAT
@@ -949,7 +953,7 @@ SWEP.StencilSight_UseMask = nil -- Use the .mask value of VElement's table as st
 -- SWEP.StencilSight_FadeReticleByProgress = nil -- Fade-in reticle alpha with aim progress; false by default
 -- // Sight Type: Flat
 
--- Sight Type: Model; requires .reticle value of VElement's table (same deal as UseMask)
+-- Sight Type: Model; requires .reticle value of ViewModelElement's table (model must be bonemergeable on the sights VElement!)
 -- SWEP.StencilSight_ReticleType = TFA.Enum.RETICLE_MODEL
 -- SWEP.StencilSight_FadeReticleByProgress = nil -- Fade-in reticle alpha with aim progress; false by default
 -- SWEP.StencilSight_EnableQuad = nil -- Enables drawing Quad type reticles (example below) over model ones
