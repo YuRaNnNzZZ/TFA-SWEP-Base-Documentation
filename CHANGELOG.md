@@ -1,4 +1,8 @@
 # This is an archive of changelog messages from `tfa_loader.lua`.
+## 4.7.8.3
+* Fixed melee attack direction selection not working
+* Added stat name translator to development menu (along with a command)
+
 ## 4.7.8.2
 * Stencil reticle types can now be combined
 * Added a slight delay for subcategories population hook to make sure it runs after default weapons population
