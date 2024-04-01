@@ -1,4 +1,7 @@
 # This is an archive of changelog messages from `tfa_loader.lua`.
+## 4.7.8.4
+* Fixed akimbo shoot animations order breaking (and HUD mismatch)
+
 ## 4.7.8.3
 * Fixed melee attack direction selection not working
 * Added stat name translator to development menu (along with a command)
