@@ -856,6 +856,8 @@ SWEP.LuaShellEjectDelay = 0 -- The delay to actually eject things
 SWEP.LuaShellModel      = nil -- The model to use for ejected shells
 SWEP.LuaShellScale      = nil -- The model scale to use for ejected shells
 SWEP.LuaShellYaw        = nil -- The model yaw rotation ( relative ) to use for ejected shells
+SWEP.LuaShellSound      = nil -- Path to sound file that will be played on impact for ejected shells
+                              -- If not set, "shotgun" in path will force to use shotgun shell impact sounds set
 
 -- Tracer Stuff
 SWEP.TracerName         = nil   -- Change to a string of your tracer name.  Can be custom. There is a nice example at https://github.com/garrynewman/garrysmod/blob/master/garrysmod/gamemodes/base/entities/effects/tooltracer.lua
