@@ -1,4 +1,9 @@
 # This is an archive of changelog messages from `tfa_loader.lua`.
+## 4.7.8.5
+* Fixed error when both base weapon and it's descendant has an event table
+* Fixed spread with forced bullet ballistics enabled
+* Updated the localization files
+
 ## 4.7.8.4
 * Fixed akimbo shoot animations order breaking (and HUD mismatch)
 
