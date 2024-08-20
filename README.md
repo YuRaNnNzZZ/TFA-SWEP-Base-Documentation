@@ -9,6 +9,7 @@
 - [Attachment Template](lua/tfa/documentation/tfa_attachment_template.lua) - file name is the ID of attachment that goes into `SWEP.Attachments` table, place to `<your addon>/lua/tfa/att` folder
 - [Animations Reference](lua/tfa/documentation/tfa_anims_template.lua) - list of animations that are used by the base
 - [Custom Hooks](lua/tfa/documentation/tfa_hooks_custom.lua) - list of [hooks](https://wiki.facepunch.com/gmod/hook.Add) added by the base for the addons intercompatibility
+- [Material Proxies](lua/tfa/documentation/tfa_matproxies.lua) - list of [material proxies](https://developer.valvesoftware.com/wiki/Material_proxies) added by the base
 - [Developer FAQ](faq/FOR_DEVELOPERS.md) - Common code stuff relevant to developing TFA Base addons
 
 ## Paths that are loaded by the base automatically (in load order):
