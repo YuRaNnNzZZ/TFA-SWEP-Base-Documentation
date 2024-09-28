@@ -1,4 +1,9 @@
 # This is an archive of changelog messages from `tfa_loader.lua`.
+## 4.7.8.6
+* First deploy state is now networked (and saved properly with engine saves)
+* Projectile spread now function same as hitscan bullets
+* Fixes for various reported errors
+
 ## 4.7.8.5
 * Fixed error when both base weapon and it's descendant has an event table
 * Fixed spread with forced bullet ballistics enabled
