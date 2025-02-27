@@ -7,6 +7,7 @@
 - [Weapon Template](lua/tfa/documentation/tfa_base_template.lua) - reference for the main weapon Lua file with all values ([legacy template](lua/tfa/documentation/tfa_legacy_template.lua) is available for backwards compatibility reference)
 - [Melee Weapon Template](lua/tfa/documentation/tfa_melee_template.lua) - reference for melee-type weapons
 - [Attachment Template](lua/tfa/documentation/tfa_attachment_template.lua) - file name is the ID of attachment that goes into `SWEP.Attachments` table, place to `<your addon>/lua/tfa/att` folder
+- [Batch Attachments Template](lua/tfa/documentation/tfa_attbatch_template.lua) - for registering multiple attachments in a single file, to reduce Lua files. Place to `<your addon>/lua/tfa/attbatch` folder
 - [Animations Reference](lua/tfa/documentation/tfa_anims_template.lua) - list of animations that are used by the base
 - [Custom Hooks](lua/tfa/documentation/tfa_hooks_custom.lua) - list of [hooks](https://wiki.facepunch.com/gmod/hook.Add) added by the base for the addons intercompatibility
 - [Material Proxies](lua/tfa/documentation/tfa_matproxies.lua) - list of [material proxies](https://developer.valvesoftware.com/wiki/Material_proxies) added by the base

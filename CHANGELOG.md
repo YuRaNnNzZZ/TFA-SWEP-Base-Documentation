@@ -1,4 +1,21 @@
 # This is an archive of changelog messages from `tfa_loader.lua`.
+## 4.7.9.0
+* Added throttling for attachments status request from server
+* Reworked loader
+* Updated Inter font to 4.1
+* Added batch attachments registration system to reduce Lua files count
+* Removed unnecessary attachments initialization calls on map load
+* Renamed tfa_envcheck convar to sv_tfa_envcheck since it's controlled by server
+* Removed microoptimization from SWEP:GetStatRaw, allowing it to work with tables from weapons.Get
+* Weapon type autodetection fixes (for weapons that do not have SWEP.Type explicitly defined)
+* Automatic spawnmenu subcategories generation based on weapon type (cl_tfa_subcategories_auto 1)
+* Color palettes/mixers in base settings are now foldable
+* Fix for crouching and sprinting with centered viewmodel
+* Aim progress FOV threshold, enabled by default for 2D scoped weapons
+* Slightly improved aim, sprint and inspect progress prediction
+* Various microoptimizations to frequently called hooks
+* Fixed SWEP:CanAttach (and relevant hooks) not receiving attachment ID on detaching
+
 ## 4.7.8.6
 * First deploy state is now networked (and saved properly with engine saves)
 * Projectile spread now function same as hitscan bullets

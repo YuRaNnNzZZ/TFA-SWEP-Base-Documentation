@@ -549,6 +549,9 @@ SWEP.Secondary.OwnerFOV             = 70
 -- AKA IronViewModelFOV
 SWEP.Secondary.ViewModelFOV         = nil -- Defaults to 65. Target viewmodel FOV when aiming down the sights.
 
+SWEP.Secondary.OwnerFOVUseThreshold = nil -- true/false -- If enabled, OwnerFOV will be changed only past the threshold when aiming. Defaults to SWEP.Scoped value
+SWEP.Secondary.OwnerFOVThreshold    = nil -- 0 to 1 -- defaults to SWEP.ScopeOverlayThreshold (which is 0.875 by default)
+
 ----------------- Worldmodel related
 SWEP.WorldModel                 = "models/your/wmodel/path/here.mdl" -- Weapon world model path
 -- AKA Bodygroups_W
