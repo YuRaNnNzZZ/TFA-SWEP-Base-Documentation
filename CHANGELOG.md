@@ -1,4 +1,7 @@
 # This is an archive of changelog messages from `tfa_loader.lua`.
+## 4.7.9.2
+* Fixed slug ammunition attachment not being available
+
 ## 4.7.9.1
 * Fixed black screen for weapons with instant aiming/scoping
 
