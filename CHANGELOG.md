@@ -1,4 +1,9 @@
 # This is an archive of changelog messages from `tfa_loader.lua`.
+## 4.7.9.3
+* Fixed suppressed guns emitting light when shot
+* Added toggles for FOV sprint modifier and first draw animation
+* Added multiplier settings for recoil and knockback (which is no longer controlled by force multiplier)
+
 ## 4.7.9.2
 * Fixed slug ammunition attachment not being available
 
