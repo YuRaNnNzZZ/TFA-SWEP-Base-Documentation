@@ -1,6 +1,6 @@
 # This is an archive of changelog messages from `tfa_loader.lua`.
 ## 4.7.9.3
-* Fixed suppressed guns emitting light when shot
+* Fixed suppressed guns emitting light when shooting
 * Added toggles for FOV sprint modifier and first draw animation
 * Added multiplier settings for recoil and knockback (which is no longer controlled by force multiplier)
 
