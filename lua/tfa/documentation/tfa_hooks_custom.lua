@@ -282,6 +282,24 @@ GM:TFA_PostPrimaryAttack(Weapon weapon)
 -- Arguments:
 --     1. Weapon weapon
 
+boolean GM:TFA_PreCanSecondaryAttack(Weapon weapon)
+-- Hook name: TFA_PreCanSecondaryAttack
+-- Description: Called before weapon checks the right-click attack in SWEP:CanSecondaryAttack overrides.
+-- State: Shared, Predicted (not called in SP clientside)
+-- Arguments:
+--     1. Weapon weapon
+-- Returns:
+--     1. boolean - Return to override return value of SWEP:CanSecondaryAttack
+
+boolean GM:TFA_CanSecondaryAttack(Weapon weapon)
+-- Hook name: TFA_CanSecondaryAttack
+-- Description: Checks if weapon is allowed to use right-click attack. DOES NOT PREVENT AIMING DOWN THE SIGHTS!
+-- State: Shared, Predicted (not called in SP clientside)
+-- Arguments:
+--     1. Weapon weapon
+-- Returns:
+--     1. boolean - Return to override return value of SWEP:CanSecondaryAttack
+
 boolean GM:TFA_SecondaryAttack(Weapon weapon)
 -- Hook name: TFA_SecondaryAttack
 -- Description: Called when weapon is attempting to attack with right click (AltAttack/melee bash)
@@ -290,6 +308,13 @@ boolean GM:TFA_SecondaryAttack(Weapon weapon)
 --     1. Weapon weapon
 -- Returns:
 --     1. boolean - Return true to prevent secondary attack
+
+GM:TFA_PostSecondaryAttack(Weapon weapon)
+-- Hook name: TFA_PostSecondaryAttack
+-- Description: Called after successful right-click attack
+-- State: Shared, Predicted (not called in SP clientside)
+-- Arguments:
+--     1. Weapon weapon
 
 
 

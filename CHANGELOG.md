@@ -1,4 +1,10 @@
 # This is an archive of changelog messages from `tfa_loader.lua`.
+## 4.7.9.4
+* All sub-bases should now call primary/secondary attack hooks correctly
+* Fixed grenades not having proper velocity for primary throw
+* Added spread and recoil override functions
+* Removed in-game changelog
+
 ## 4.7.9.3
 * Fixed suppressed guns emitting light when shooting
 * Added toggles for FOV sprint modifier and first draw animation
