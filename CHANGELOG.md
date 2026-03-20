@@ -1,4 +1,10 @@
 # This is an archive of changelog messages from `tfa_loader.lua`.
+## 4.7.9.5
+* Firemode change notifier (can be disabled in HUD settings)
+* Attachment networking rework
+* Fixed arrows generating errors when shot at entities with no bones
+* Fixes spawnmenu subcategories breaking the "Other" category
+
 ## 4.7.9.4
 * All sub-bases should now call primary/secondary attack hooks correctly
 * Fixed grenades not having proper velocity for primary throw
