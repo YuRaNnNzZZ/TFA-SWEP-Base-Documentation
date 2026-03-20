@@ -195,6 +195,28 @@ boolean GM:TFA_Deploy(Weapon weapon)
 -- Returns:
 --     1. boolean - Return a boolean to override SWEP:Deploy output (default behavior returns true)
 
+GM:TFA_AddNetworkVarWatchers(Weapon weapon)
+-- Hook name: TFA_AddNetworkVarWatchers
+-- Description: Called from SWEP:AddNetworkVarWatchers (right before TFA_SetupDataTables)
+-- State: Shared
+-- Arguments:
+--     1. Weapon weapon
+-- Example:
+hook.Add("TFA_AddNetworkVarWatchers", "TFA_Hooks_Example", function(weapon)
+	weapon:NetworkVarNotify("Sprinting", function(entity, name, old, new)
+		if old == new then return end -- We only watch for changed value
+
+		print(CurTime(), entity, "new sprint state", new) -- Will print when sptint state is changed
+	end)
+end)
+
+GM:TFA_AddNetworkVarWatchersCL(Weapon weapon)
+-- Hook name: TFA_AddNetworkVarWatchersCL
+-- Description: Called from SWEP:AddNetworkVarWatchersCL (right before TFA_SetupDataTables)
+-- State: Client
+-- Arguments:
+--     1. Weapon weapon
+
 
 
 ---------------------------
