@@ -1,4 +1,7 @@
 # This is an archive of changelog messages from `tfa_loader.lua`.
+## 4.7.9.6
+* Added a check to not process viewmodel stuff when drawing a depth texture, fixes issues with custom shaders that force enable the depth pass.
+
 ## 4.7.9.5
 * Firemode change notifier (can be disabled in HUD settings)
 * Attachment networking rework
